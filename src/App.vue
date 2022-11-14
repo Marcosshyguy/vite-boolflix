@@ -12,18 +12,20 @@ export default{
     AppSearch
   },
   methods:{
+    getMovie(){
+      axios.get(`${this.store.movieApi}?${this.store.apiKey}`)
+      .then((resp) => this.store.moviesArray = resp.data.results);
+      console.log(this.store.moviesArray)
+    }
 
   },
   created (){
-    axios.get(`${this.store.movieApi}?${this.store.apiKey}`)
-    .then((resp) => this.store.moviesArray = resp.data);
-    console.log(this.store.moviesArray)
   }
 }
 </script>
 
 <template>
- <AppSearch />
+ <AppSearch @search="getMovie" />
 </template>
 
 <style lang="scss">

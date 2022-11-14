@@ -8,7 +8,7 @@ export default{
     }
   },
   methods:{
-
+    
   }
 }
 </script>
@@ -18,7 +18,7 @@ export default{
     <div class="form-container">
         <input type="text" id="searchMovies" v-model="this.store.searchResult">
         <label for="searchMovies" ></label>
-        <button>Cerca</button>
+        <button @click="$emit('search')">Cerca</button>
     </div>
 </div>
 </template>

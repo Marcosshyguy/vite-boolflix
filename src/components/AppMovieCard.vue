@@ -26,7 +26,8 @@ export default{
 <template>
     <div class="card">
         <div>
-            <img :src="`https://image.tmdb.org/t/p/w342${poster_path}`" alt="">
+            <img :src="`https://image.tmdb.org/t/p/w342${poster_path}`" :alt="original_title" v-if="poster_path">
+            <p v-else>Immagine non trovata</p>
         </div>
         <p><strong>Lingua originale: </strong>
             <span v-if="original_language === 'en'">Bye Bye</span>

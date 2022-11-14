@@ -20,12 +20,20 @@ export default{
       if(this.store.searchResult){
         params.query = this.store.searchResult
       }
-
+      // movies
       axios.get(this.store.movieApi, {params : params})
       .then((resp) => this.store.moviesArray = resp.data.results);
       console.log(this.store.moviesArray)
-    }
+      // tv shows
+      axios.get(this.store.tvShowsApi, {params : params})
+      .then((resp) => this.store.tvShowsArray = resp.data.results);
+      console.log(this.store.tvShowsArray)
 
+
+    },
+    // getTvShows(){
+
+    // }
   },
   created (){
     this.getMovie();

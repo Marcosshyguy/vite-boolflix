@@ -15,7 +15,9 @@ export default{
     original_title : String,
     overview :String,
     vote_average: Number,
-    original_language: String
+    original_language: String,
+    name: String,
+    original_name: String
   }
 }
 </script>
@@ -27,8 +29,8 @@ export default{
             <span v-else>kawai</span>
 
         </p>
-        <p><strong>Titolo: </strong>{{title}}</p>
-        <p><strong>Titolo originale: </strong>{{original_title}}</p>
+        <p><strong>Titolo: </strong>{{title}}{{name}}</p>
+        <p><strong>Titolo originale: </strong>{{original_title}}{{original_name}}</p>
         <p><strong>Trama: </strong>{{overview}}</p>
         <p><strong>Voto: </strong>{{vote_average}}</p>
         <span>Rating 

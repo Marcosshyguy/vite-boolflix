@@ -15,13 +15,17 @@ export default{
   },
   methods:{
     getMovie(){
-      axios.get(`${this.store.movieApi}?${this.store.apiKey}`)
+      let params = {}
+      params.api_key = this.store.apiKey;
+      params.query = this.store.apiQuery;
+      axios.get(this.store.movieApi, {params : params})
       .then((resp) => this.store.moviesArray = resp.data.results);
       console.log(this.store.moviesArray)
     }
 
   },
   created (){
+    this.getMovie();
   }
 }
 </script>

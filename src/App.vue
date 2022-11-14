@@ -23,9 +23,7 @@ export default{
 </script>
 
 <template>
- <div class="main-container">
-  <p>fseffesfsfs</p>
- </div>
+ <AppSearch />
 </template>
 
 <style lang="scss">

@@ -21,10 +21,10 @@ export default{
     <div class="main-container">
         <div class="row">
             <div class="col" v-for="(movie, movieIndex) in store.moviesArray" :key="movieIndex">
-                <AppMovieCard :title="movie.title" :original_title="movie.original_title" :overview="movie.overview" :vote_average="movie.vote_average" :original_language="movie.original_language" />
+                <AppMovieCard :poster_path="movie.poster_path" :title="movie.title" :original_title="movie.original_title" :overview="movie.overview" :vote_average="movie.vote_average" :original_language="movie.original_language" />
             </div>
             <div class="col" v-for="(tvShow, tvShowIndex) in store.tvShowsArray" :key="tvShowIndex">
-                <AppMovieCard :title="tvShow.title" :name="tvShow.name" :original_title="tvShow.original_title" :original_name="tvShow.original_name" :overview="tvShow.overview" :vote_average="tvShow.vote_average" :original_language="tvShow.original_language"  />
+                <AppMovieCard :poster_path="tvShow.poster_path" :title="tvShow.title" :name="tvShow.name" :original_title="tvShow.original_title" :original_name="tvShow.original_name" :overview="tvShow.overview" :vote_average="tvShow.vote_average" :original_language="tvShow.original_language"  />
             </div>
         </div>
     </div>

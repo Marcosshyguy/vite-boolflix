@@ -17,17 +17,20 @@ export default{
     vote_average: Number,
     original_language: String,
     name: String,
-    original_name: String
+    original_name: String,
+    poster_path: String
   }
 }
 </script>
 
 <template>
     <div class="card">
+        <div>
+            <img :src="`https://image.tmdb.org/t/p/w342${poster_path}`" alt="">
+        </div>
         <p><strong>Lingua originale: </strong>
             <span v-if="original_language === 'en'">Bye Bye</span>
             <span v-else>kawai</span>
-
         </p>
         <p><strong>Titolo: </strong>{{title}}{{name}}</p>
         <p><strong>Titolo originale: </strong>{{original_title}}{{original_name}}</p>

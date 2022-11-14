@@ -23,17 +23,14 @@ export default{
       // movies
       axios.get(this.store.movieApi, {params : params})
       .then((resp) => this.store.moviesArray = resp.data.results);
-      console.log(this.store.moviesArray)
+      console.log("film",this.store.moviesArray)
       // tv shows
       axios.get(this.store.tvShowsApi, {params : params})
       .then((resp) => this.store.tvShowsArray = resp.data.results);
-      console.log(this.store.tvShowsArray)
+      console.log("tvshow",this.store.tvShowsArray)
 
 
-    },
-    // getTvShows(){
-
-    // }
+    }
   },
   created (){
     this.getMovie();

@@ -18,6 +18,10 @@ export default{
       let params = {}
       params.api_key = this.store.apiKey;
       params.query = this.store.apiQuery;
+      if(this.store.searchResult){
+        params.title = this.store.searchResult
+      }
+
       axios.get(this.store.movieApi, {params : params})
       .then((resp) => this.store.moviesArray = resp.data.results);
       console.log(this.store.moviesArray)

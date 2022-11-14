@@ -2,6 +2,7 @@
 import {store} from "./store";
 import axios from "axios";
 import AppSearch from "./components/AppSearch.vue";
+import AppMovieGrid from "./components/AppMovieGrid.vue"
 export default{
   data(){
     return{
@@ -9,7 +10,8 @@ export default{
     }
   },
   components :{
-    AppSearch
+    AppSearch,
+    AppMovieGrid
   },
   methods:{
     getMovie(){
@@ -26,6 +28,7 @@ export default{
 
 <template>
  <AppSearch @search="getMovie" />
+ <AppMovieGrid />
 </template>
 
 <style lang="scss">

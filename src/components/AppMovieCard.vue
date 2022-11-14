@@ -14,17 +14,23 @@ export default{
     title : String,
     original_title : String,
     overview :String,
-    vote_average: Number
+    vote_average: Number,
+    original_language: String
   }
 }
 </script>
 
 <template>
     <div class="card">
-        <p><strong>Titolo: {{title}}</strong></p>
-        <p><strong>Titolo originale: {{original_title}}</strong></p>
-        <p><strong>Trama: {{overview}}</strong></p>
-        <p><strong>Voto: {{vote_average}}</strong></p>
+        <p><strong>Lingua originale: </strong>
+            <span v-if="original_language === 'en'">Bye Bye</span>
+            <span v-else>kawai</span>
+
+        </p>
+        <p><strong>Titolo: </strong>{{title}}</p>
+        <p><strong>Titolo originale: </strong>{{original_title}}</p>
+        <p><strong>Trama: </strong>{{overview}}</p>
+        <p><strong>Voto: </strong>{{vote_average}}</p>
         <span>Rating 
             <span v-if="vote_average > 0 && vote_average <= 2" >1</span>
             <span v-else-if="vote_average > 2 && vote_average <= 4">2</span>

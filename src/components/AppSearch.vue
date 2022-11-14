@@ -16,7 +16,7 @@ export default{
 <template>
 <div class="main-container">
     <div class="form-container">
-        <input type="text" id="searchMovies" v-model="this.store.searchResult">
+        <input type="text" id="searchMovies" @keyup.enter="$emit('search')" v-model="this.store.searchResult">
         <label for="searchMovies" ></label>
         <button @click="$emit('search')">Cerca</button>
     </div>

@@ -17,9 +17,8 @@ export default{
     getMovie(){
       let params = {}
       params.api_key = this.store.apiKey;
-      params.query = this.store.apiQuery;
       if(this.store.searchResult){
-        params.title = this.store.searchResult
+        params.query = this.store.searchResult
       }
 
       axios.get(this.store.movieApi, {params : params})

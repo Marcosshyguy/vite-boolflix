@@ -30,15 +30,19 @@ export default{
 </template>
 
 <style lang="scss" scoped>
- 
+ @use "../style/partials/variables.scss" as *;
 .row{
+    height: calc(100% - $header-high);
+    overflow-y: auto;
     display: flex;
-    justify-content: start;
+    justify-content: space-between;
     flex-wrap: wrap;
-    gap: 2em;
+    gap: 1em;
 
         .col{
-            width: calc(100% / 5 - 2em);
+            width: calc(100% / 5 - 4em);
+            height: calc(550px - 4em);
+            margin-bottom: 1em;
         }
 }
 

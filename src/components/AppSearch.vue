@@ -32,14 +32,14 @@ export default{
 
 header{
   width: calc(100% - 2em);
-  height: $header-high;
+  height: calc($header-high - 2em);
   padding: 1em;
   background-color: $header-bg;
   
   position: sticky;
   left: 0;
   top: 0;
-  z-index: 2;
+  z-index: 9;
 
   display: flex;
   justify-content: space-between;
@@ -56,6 +56,7 @@ header{
 
     i{
       color: grey;
+      cursor: pointer;
 
     }
 }

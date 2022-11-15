@@ -18,7 +18,7 @@ export default{
 </script>
 
 <template>
-    <div class="main-container">
+    
         <div class="row">
             <div class="col" v-for="(movie, movieIndex) in store.moviesArray" :key="movieIndex">
                 <AppMovieCard :element="movie" />
@@ -27,7 +27,6 @@ export default{
                 <AppMovieCard :element="tvShow" />
             </div>
         </div>
-    </div>
 </template>
 
 <style lang="scss" scoped>

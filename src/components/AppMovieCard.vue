@@ -21,6 +21,8 @@ export default{
     // name: String,
     // original_name: String,
     // poster_path: String
+    
+    // in this case the best way is to use the object which we are referring to and set the keys
     element : Object
   }
 }
@@ -32,18 +34,23 @@ export default{
             <img :src="`https://image.tmdb.org/t/p/w342${element.poster_path}`" :alt="element.original_title" v-if="element.poster_path">
             <p v-else>Immagine non trovata</p>
         </div>
-        <p><strong>Lingua originale: </strong>
-            <span v-if="element.original_language === 'en'">Bye Bye</span>
-            <span v-else>kawai</span>
+        <p><strong>Lingua originale: {{element.original_language}}</strong>
+            <!-- <span v-if="element.original_language === 'en'">Bye Bye</span>
+            <span v-else>kawai</span> -->
         </p>
         <p><strong>Titolo: </strong>{{element.title}}{{element.name}}</p>
         <p><strong>Titolo originale: </strong>{{element.original_title}}{{element.original_name}}</p>
         <p><strong>Trama: </strong>{{element.overview}}</p>
         <p><strong>Voto: </strong>{{element.vote_average}}</p>
         <span>Rating 
+            <!-- cicle the star rating according to the vote_avarage -->
             <!-- fast way -->
-            <span v-for="fullStar in (Math.floor(element.vote_average / 2))"><i class="fa-solid fa-star"></i></span>
-            <span v-for="emptyStar in (5 - (Math.floor(element.vote_average / 2)))"><i class="fa-regular fa-star"></i></span>
+            <span v-for="fullStar in (Math.floor(element.vote_average / 2))">
+                <i class="fa-solid fa-star"></i>
+            </span>
+            <span v-for="emptyStar in (5 - (Math.floor(element.vote_average / 2)))">
+                <i class="fa-regular fa-star"></i>
+            </span>
             <!-- slow way -->
             <!-- <span v-if="element.vote_average > 0 && element.vote_average <= 2" >
                 <i class="fa-solid fa-star"></i>

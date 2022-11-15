@@ -15,7 +15,8 @@ export default{
   },
   methods:{
     getMovie(){
-      let params = {}
+      this.store.hideSearchBar = false;
+      let params = {};
       params.api_key = this.store.apiKey;
       if(this.store.searchResult){
         params.query = this.store.searchResult
@@ -39,8 +40,11 @@ export default{
 </script>
 
 <template>
- <AppSearch @search="getMovie" />
- <AppMovieGrid />
+  <div class="main-container">
+    <AppSearch @search="getMovie" />
+    <AppMovieGrid />
+  </div>
+
 </template>
 
 <style lang="scss">

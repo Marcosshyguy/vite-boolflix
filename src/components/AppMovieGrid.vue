@@ -42,7 +42,7 @@ export default{
         .col{
             width: calc(100% / 5 - 4em);
             height: calc(550px - 4em);
-            margin-bottom: 1em;
+            margin-bottom: 3em;
         }
 }
 

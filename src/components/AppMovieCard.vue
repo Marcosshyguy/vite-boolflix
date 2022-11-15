@@ -8,7 +8,9 @@ export default{
     }
   },
   methods:{
+    // calcNumba(decimal){
 
+    // }
   },
   props: {
     // title : String,
@@ -39,7 +41,11 @@ export default{
         <p><strong>Trama: </strong>{{element.overview}}</p>
         <p><strong>Voto: </strong>{{element.vote_average}}</p>
         <span>Rating 
-            <span v-if="element.vote_average > 0 && element.vote_average <= 2" >
+            <!-- fast way -->
+            <span v-for="fullStar in (Math.floor(element.vote_average / 2))"><i class="fa-solid fa-star"></i></span>
+            <span v-for="emptyStar in (5 - (Math.floor(element.vote_average / 2)))"><i class="fa-regular fa-star"></i></span>
+            <!-- slow way -->
+            <!-- <span v-if="element.vote_average > 0 && element.vote_average <= 2" >
                 <i class="fa-solid fa-star"></i>
                 <i class="fa-regular fa-star"></i>
                 <i class="fa-regular fa-star"></i>
@@ -74,7 +80,7 @@ export default{
                 <i class="fa-solid fa-star"></i>
                 <i class="fa-solid fa-star"></i>
             </span>
-            <span v-else>Non Pervenuto</span>
+            <span v-else>Non Pervenuto</span> -->
         </span>
     </div>
 </template>

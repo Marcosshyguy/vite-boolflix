@@ -15,6 +15,8 @@ export default{
   },
   methods:{
     getMovie(){
+      this.store.moviesArray = []
+      this.store.tvShowsArray = []
       this.store.hideSearchBar = false;
       let params = {};
       params.api_key = this.store.apiKey;
@@ -30,7 +32,7 @@ export default{
       .then((resp) => this.store.tvShowsArray = resp.data.results);
       console.log("tvshow",this.store.tvShowsArray)
 
-
+      this.store.searchResult = ''
     }
   },
   created (){

@@ -8,9 +8,9 @@ export default{
     }
   },
   methods:{
-    // calcNumba(decimal){
-
-    // }
+    getImgPathJpg(img) {
+            return new URL(`../assets/images/${img}.jpg`, import.meta.url).href;
+        }
   },
   props: {
     // title : String,

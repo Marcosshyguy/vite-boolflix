@@ -25,12 +25,12 @@ export default{
       }
       // movies
       axios.get(this.store.movieApi, {params : params})
-      .then((resp) => this.store.moviesArray = resp.data.results);
-      console.log("film",this.store.moviesArray)
+      .then((resp) => this.store.moviesArray = resp.data.results)
+      .catch((error) => {this.store.moviesArray = []});
       // tv shows
       axios.get(this.store.tvShowsApi, {params : params})
-      .then((resp) => this.store.tvShowsArray = resp.data.results);
-      console.log("tvshow",this.store.tvShowsArray)
+      .then((resp) => this.store.tvShowsArray = resp.data.results)
+      .catch((error) => {this.store.tvShowsArray = []});;
 
       this.store.searchResult = ''
     }

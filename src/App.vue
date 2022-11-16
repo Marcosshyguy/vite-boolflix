@@ -41,8 +41,26 @@ export default{
 
 
       this.store.searchResult = ''
+    },
+    cicleonGenres(){
+      const cicledGenres = this.store.moviesArray.genre_ids.forEach((element, index) => {
+        index
+      });
+      console.log(cicledGenres)
+      return cicledGenres
+    },
+    filterGenre(){
+      // this.store.moviesArray =[]
+      // this.store.tvShowsArray =[]
+      this.store.moviesArray = this.store.moviesArray.filter((item) => {
+        if (item.genre_ids[this.cicleonGenres] == this.store.genreOption) {
+          return true
+        }else{
+          return false
+        }
+      })
+      console.log(this.store.moviesArray)
     }
-    
   },
   created (){
     getGenre:{
@@ -58,7 +76,7 @@ export default{
 
 <template>
   <div class="main-container">
-    <AppSearch @search="getMovie" />
+    <AppSearch @search="getMovie" @filter="filterGenre" />
     <AppMovieGrid />
   </div>
 

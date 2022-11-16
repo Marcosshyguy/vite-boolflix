@@ -16,13 +16,10 @@ export default{
 <template>
 <header>
   <h1></h1>
-  <!-- <select name="genres" id="genres">
+  <select name="genres" id="genres" v-model="store.genreOption" @change="$emit('filter')">
     <option value="">Scegli un genere</option>
-    <option v-for="(genre, genreIndex) in store.genreList" :value="genre.name" :key="genreIndex">{{genre.name}}</option>
-  </select> -->
-  <ul>
-    <li v-for="genre in store.genreList">{{genre.name}}</li>
-  </ul>
+    <option  v-for="(genre, genreIndex) in store.genreList" :value="genre.id" :key="genreIndex">{{genre.name}}</option>
+  </select>
   <div class="form-container" v-if="store.hideSearchBar">
       <input type="text" id="searchMovies" @keyup.enter="$emit('search')" v-model="this.store.searchResult">
       <button @click="$emit('search')">Cerca</button>

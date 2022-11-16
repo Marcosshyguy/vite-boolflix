@@ -49,7 +49,7 @@ export default{
       let params = {};
       params.api_key = this.store.apiKey;
       axios.get("https://api.themoviedb.org/3/genre/tv/list?api_key=7e1f56d2ef367d1a473c28d6c3add2f9")
-      .then((resp) => this.store.genreList = resp.data)
+      .then((resp) => this.store.genreList = resp.data.genres);
       console.log(this.store.genreList)
     }
   }
@@ -57,7 +57,6 @@ export default{
 </script>
 
 <template>
-  <button @click="getGenre">fddf</button>
   <div class="main-container">
     <AppSearch @search="getMovie" />
     <AppMovieGrid />

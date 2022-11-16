@@ -27,6 +27,7 @@ export default{
                 <AppMovieCard :element="tvShow" />
             </div>
         </div>
+        
 </template>
 
 <style lang="scss" scoped>

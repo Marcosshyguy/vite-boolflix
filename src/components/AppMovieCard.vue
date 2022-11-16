@@ -34,7 +34,7 @@ export default{
         <div class="card">
             <div class="card-image">
                     <img :src="`https://image.tmdb.org/t/p/w342${element.poster_path}`" :alt="element.original_title" v-if="element.poster_path">
-                    <p v-else>Immagine non trovata</p>
+                    <img src="../assets/images/image-not-found.jpeg" alt="Image Not Found" v-else>
             </div>
             <div class="card-infos">
                 <p><strong>Lingua originale: {{element.original_language}}</strong>
